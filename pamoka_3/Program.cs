@@ -128,6 +128,9 @@ namespace pamoka_3
             {
                 Console.WriteLine("Nesuprantu, kas cia per spalva");
             }
+
+
+            Console.WriteLine("GITHUB");
         }
 
         public class Human
