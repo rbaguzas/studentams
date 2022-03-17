@@ -82,6 +82,10 @@ namespace tema_4_ciklai_ir_kolekcijos
             {
                 Console.WriteLine(simbolis);
             }
+
+            //int[] b = new int [10];
+
+            //b[]
         }
     }
 }
