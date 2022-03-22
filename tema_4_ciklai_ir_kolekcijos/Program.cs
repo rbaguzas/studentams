@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace tema_4_ciklai_ir_kolekcijos
 {
@@ -323,22 +324,58 @@ namespace tema_4_ciklai_ir_kolekcijos
 
             List<string> listas2 = new List<string> { "Jonas", "Petras", "Juozas" };
 
-            for (int i = 0; i < listas.Count; i++)
-            {
-                Console.WriteLine(listas[i]);
-            }
+            //for (int i = 0; i < listas.Count; i++)
+            //{
+            //    Console.WriteLine(listas[i]);
+            //}
 
-            foreach (var item in listas)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in listas)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            listas.RemoveAt(5);
+            //listas.RemoveAt(5);
 
-            listas.Insert(5, "Onute");
+            //listas.Insert(5, "Onute");
             listas.AddRange(listas2);
             bool isContains = listas.Contains("Petras");
             int indexas = listas.LastIndexOf("Petras");
+
+
+            //Listai. 8. Uzduotis
+            Console.Clear();
+            List<string> countries = new List<string>();
+            string path = "C:\\Users\\laimo\\Documents\\GitHub\\https---github.com-LaimonasCiurlionis-studentams.git\\tema_4_ciklai_ir_kolekcijos\\countries.txt";
+            string destinationPath = "C:\\Users\\laimo\\Documents\\GitHub\\https---github.com-LaimonasCiurlionis-studentams.git\\tema_4_ciklai_ir_kolekcijos\\countries_sorted.txt";
+
+            using (StreamReader countriesFile = new StreamReader(path)) 
+            {
+                string readLine;
+
+                while ((readLine = countriesFile.ReadLine()) != null) 
+                {
+                    countries.Add(readLine);
+                }
+            }
+
+            countries.Sort();
+
+            foreach (string country in countries)
+            {
+                Console.WriteLine(country);
+            }
+
+            using (StreamWriter sw = File.CreateText(destinationPath));
+
+            File.WriteAllLines(destinationPath, countries);
+
+            Console.WriteLine($"Is viso saliu: {countries.Count}");
+
+
+            
+
+
+
 
 
             #endregion
