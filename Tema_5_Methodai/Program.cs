@@ -36,7 +36,14 @@ namespace Tema_5_Methodai
 
             MiniCalculator2("+", 9, 1);
             MiniCalculator2("-", 8, 4);
+
+            //NupiestiRemeli(10);
+            //NupiestiRemeli(10, 10);
+
+            int sum1 = CalculateSumRecursively(1, 10);
         }
+
+        #region Basic Methodai
 
         public static int AddTwoNumbers(int x, int y)
         {
@@ -81,9 +88,6 @@ namespace Tema_5_Methodai
             Console.WriteLine($"Resultas {x} {simbolis} {y} = {result}");
         }
 
-
-
-
         public static void AddToList(List<string> stringList, string stringToAdd) 
         {
             stringList.Add(stringToAdd);
@@ -95,5 +99,198 @@ namespace Tema_5_Methodai
             stringList.Add(stringToAdd);
             return stringList;
         }
+
+        #endregion
+
+        #region Methodu perkrovimas (Methods Overloading)
+
+        private static void NupiestiRemeli(int remelioIlgis) 
+        {
+            Console.Clear();
+
+            int kiekRemelioSimboliuNupiesti = remelioIlgis;
+            string remelioSimbolis = "*";
+            string tarpelioSimbolis = " ";
+
+            //nupiesime virsutine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+
+            //vidurine eilute
+            Console.Write("{0}{1}{2}", remelioSimbolis, tarpelioSimbolis, kiekRemelioSimboliuNupiesti);
+            int skaiciausIlgis = kiekRemelioSimboliuNupiesti.ToString().Length;
+            int kiekTarpuPraleisti = remelioSimbolis.Length * 2 + skaiciausIlgis + tarpelioSimbolis.Length;
+
+            for (int i = kiekTarpuPraleisti; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(tarpelioSimbolis);
+            }
+
+            Console.Write(remelioSimbolis);
+            Console.WriteLine();
+
+            //apatine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void NupiestiRemeli(int remelioIlgis, int remelioPlotis)
+        {
+            Console.Clear();
+
+            int kiekRemelioSimboliuNupiesti = remelioIlgis;
+            int kokiRemelioPlotiNupiesti = remelioPlotis;
+            string remelioSimbolis = "*";
+            string tarpelioSimbolis = " ";
+
+            //nupiesime virsutine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+
+            int kiekTarpuPraleisti = 0;
+
+            for (int i = 0; i < kokiRemelioPlotiNupiesti; i++)
+            {
+                //vidurine eilute
+                Console.WriteLine("{0}{1}{2}", remelioSimbolis, tarpelioSimbolis, kiekRemelioSimboliuNupiesti);
+                int skaiciausIlgis = kiekRemelioSimboliuNupiesti.ToString().Length;
+                kiekTarpuPraleisti = remelioSimbolis.Length * 2 + skaiciausIlgis + tarpelioSimbolis.Length;
+            }
+
+            for (int i = kiekTarpuPraleisti; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(tarpelioSimbolis);
+            }
+
+            Console.Write(remelioSimbolis);
+            Console.WriteLine();
+
+            //apatine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void NupiestiRemeli(int remelioIlgis, string remelioPlotis)
+        {
+            Console.Clear();
+
+            int kiekRemelioSimboliuNupiesti = remelioIlgis;
+            string kokiRemelioPlotiNupiesti = remelioPlotis;
+            string remelioSimbolis = "*";
+            string tarpelioSimbolis = " ";
+
+            //nupiesime virsutine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+
+            int kiekTarpuPraleisti = 0;
+
+            for (int i = 0; i < kokiRemelioPlotiNupiesti.Length; i++)
+            {
+                //vidurine eilute
+                Console.WriteLine("{0}{1}{2}", remelioSimbolis, tarpelioSimbolis, kiekRemelioSimboliuNupiesti);
+                int skaiciausIlgis = kiekRemelioSimboliuNupiesti.ToString().Length;
+                kiekTarpuPraleisti = remelioSimbolis.Length * 2 + skaiciausIlgis + tarpelioSimbolis.Length;
+            }
+
+            for (int i = kiekTarpuPraleisti; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(tarpelioSimbolis);
+            }
+
+            Console.Write(remelioSimbolis);
+            Console.WriteLine();
+
+            //apatine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+        }
+
+        private static void NupiestiRemeli(string remelioIlgis, int remelioPlotis)
+        {
+            Console.Clear();
+
+            int kiekRemelioSimboliuNupiesti = remelioIlgis.Length;
+            int kokiRemelioPlotiNupiesti = remelioPlotis;
+            string remelioSimbolis = "*";
+            string tarpelioSimbolis = " ";
+
+            //nupiesime virsutine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+
+            int kiekTarpuPraleisti = 0;
+
+            for (int i = 0; i < kokiRemelioPlotiNupiesti; i++)
+            {
+                //vidurine eilute
+                Console.WriteLine("{0}{1}{2}", remelioSimbolis, tarpelioSimbolis, kiekRemelioSimboliuNupiesti);
+                int skaiciausIlgis = kiekRemelioSimboliuNupiesti.ToString().Length;
+                kiekTarpuPraleisti = remelioSimbolis.Length * 2 + skaiciausIlgis + tarpelioSimbolis.Length;
+            }
+
+            for (int i = kiekTarpuPraleisti; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(tarpelioSimbolis);
+            }
+
+            Console.Write(remelioSimbolis);
+            Console.WriteLine();
+
+            //apatine eilute
+            for (int i = 0; i < kiekRemelioSimboliuNupiesti; i++)
+            {
+                Console.Write(remelioSimbolis);
+            }
+
+            Console.WriteLine();
+        }
+        #endregion
+
+        #region Rekursija 
+
+        private static int CalculateSumRecursively(int x, int y) 
+        {
+            int sum = x;
+
+            if (x < y) 
+            {
+                x++;
+                return sum += CalculateSumRecursively(x, y);
+            }
+
+            return sum;
+        }
+
+        #endregion
+
     }
 }
